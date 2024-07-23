@@ -21,6 +21,7 @@ export class ShopifyService {
         apiSecret: string,
         adminToken: string,
         storefrontToken: string,
+        hostName: string,
     }) {
         this.domain = config.domain
         this.apiKey = config.apiKey
@@ -32,7 +33,7 @@ export class ShopifyService {
             apiKey: this.apiKey,
             apiSecretKey: this.apiSecret,
             scopes: ['read_products'],
-            hostName: process.env.HOST_NAME,
+            hostName: config.hostName,
             apiVersion: LATEST_API_VERSION,
             isEmbeddedApp: false,
             debug: false,

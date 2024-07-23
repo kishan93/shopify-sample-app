@@ -20,6 +20,7 @@ import { program } from 'commander'
         apiSecret: process.env.SHOPIFY_API_SECRET,
         adminToken: process.env.SHOPIFY_ADMIN_TOKEN,
         storefrontToken: process.env.SHOPIFY_STOREFRONT_TOKEN,
+        hostName: process.env.HOST_NAME,
     });
 
     const res = await shopifyService.product().getProductsByNames(options.name);
