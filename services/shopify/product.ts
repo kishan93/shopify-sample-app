@@ -1,15 +1,14 @@
-import { ShopifyService } from ".";
+import { ShopifyServiceContract } from ".";
 
 export default class Product {
-    shopifyService: ShopifyService;
+    shopifyService: ShopifyServiceContract;
 
-    constructor(shopifyService: ShopifyService) {
+    constructor(shopifyService: ShopifyServiceContract) {
         this.shopifyService = shopifyService;
     }
 
 
     async getProductsByNames(name: string) {
-        // filter products by name, sort products by variant price
         let query = `
             query {
                 products(first: 10, query: "title:${name}") {

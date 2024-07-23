@@ -1,6 +1,5 @@
-import { it } from "node:test";
-import { ShopifyService } from "../dist/services/shopify";
-import Product from "../dist/services/shopify/product";
+import { ShopifyService } from "../services/shopify";
+import Product from "../services/shopify/product";
 
 test('ShopifyService should create a new ShopifyService instance', () => {
     const shopifyService = new ShopifyService({

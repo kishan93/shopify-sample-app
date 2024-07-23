@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "jest test",
+    "test": "jest",
     "build": "npx tsc",
     "start": "npx tsc && node dist/index.js"
   },

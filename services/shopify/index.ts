@@ -4,7 +4,12 @@ import { GraphqlClient, LATEST_API_VERSION, LogSeverity, Shopify, shopifyApi } f
 import { StorefrontClient } from "@shopify/shopify-api/dist/ts/lib/clients/storefront/client"
 import Product from "./product"
 
-export class ShopifyService {
+export interface ShopifyServiceContract {
+    getGraphqlClient(): GraphqlClient
+    getStorefrontClient(): StorefrontClient
+}
+
+export class ShopifyService implements ShopifyServiceContract {
     private domain: string
     private apiKey: string
     private apiSecret: string
@@ -66,6 +71,10 @@ export class ShopifyService {
 
     getGraphqlClient(): GraphqlClient {
         return this.graphQlClient
+    }
+
+    getStorefrontClient(): StorefrontClient {
+        return this.storefrontClient
     }
 
     product() {
